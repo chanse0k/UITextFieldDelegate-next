@@ -18,6 +18,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
         
         txtInput.placeholder = "입력하세요"
         txtInput.clearButtonMode = UITextFieldViewMode.whileEditing
+        
         // Do any additional setup after loading the view, typically from a nib.
     }
 
@@ -28,6 +29,7 @@ class ViewController: UIViewController,UITextFieldDelegate {
     @IBAction func btInput(_ sender: Any) {
         lblResult.text = "Hello " + txtInput.text!
         txtInput.text = ""
+        txtInput.resignFirstResponder()
     }
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         lblResult.text = "Hello "+txtInput.text!
