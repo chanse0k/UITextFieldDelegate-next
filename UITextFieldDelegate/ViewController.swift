@@ -36,6 +36,10 @@ class ViewController: UIViewController,UITextFieldDelegate {
         txtInput.text = ""
         return true
     }
-
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        txtInput.resignFirstResponder()
+        view.backgroundColor = UIColor.yellow
+        
+    }
 }
 
