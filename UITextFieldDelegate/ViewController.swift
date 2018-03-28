@@ -31,15 +31,18 @@ class ViewController: UIViewController,UITextFieldDelegate {
         txtInput.text = ""
         txtInput.resignFirstResponder()
     }
-    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
-        lblResult.text = "Hello "+txtInput.text!
-        txtInput.text = ""
-        return true
-    }
+
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         txtInput.resignFirstResponder()
         view.backgroundColor = UIColor.yellow
         
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        txtInput.resignFirstResponder()
+        view.backgroundColor = UIColor.black
+        return true
+    }
+    
 }
 
