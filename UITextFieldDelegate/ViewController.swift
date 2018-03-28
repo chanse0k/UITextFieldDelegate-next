@@ -31,18 +31,22 @@ class ViewController: UIViewController,UITextFieldDelegate {
         txtInput.text = ""
         txtInput.resignFirstResponder()
     }
-
+    // 뷰를 터치하면 키패드가 내려감
     override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         txtInput.resignFirstResponder()
         view.backgroundColor = UIColor.yellow
         
     }
-    
+    // 앤터를 클릭할떄
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         txtInput.resignFirstResponder()
-        view.backgroundColor = UIColor.black
+        lblResult.backgroundColor = UIColor.red
         return true
     }
-    
+    // clear를 눌렀을때 호출
+    func textFieldShouldClear(_ textField: UITextField) -> Bool {
+        txtInput.backgroundColor = UIColor.cyan
+        return true
+    }
 }
 
